@@ -43,21 +43,21 @@ function afficherDetail() {
   var z = document.getElementById("detail");
   if (!z) return;
   var id = parseInt(new URLSearchParams(location.search).get("id"), 10);
-  var f = FORMATIONS.find(function (x) { return x.id === id; });
+  var form = FORMATIONS.find(function (x) { return x.id === id; });
 
-  var s = styleDe(f.id);
-  document.title = f.nom + " — FormaPro";
+  var s = styleDe(form.id);
+  document.title = form.nom + " — FormaPro";
   z.innerHTML =
     '<div class="bandeau" style="background:linear-gradient(135deg,' + s.couleur + ',#1f3a5f)">' +
-      '<div class="conteneur"><h1>' + s.icone + ' ' + f.nom + '</h1><p>' + f.description + '</p></div></div>' +
+      '<div class="conteneur"><h1>' + s.icone + ' ' + form.nom + '</h1><p>' + form.description + '</p></div></div>' +
     '<div class="conteneur section"><div class="deux-cols large">' +
       '<div>' +
-        '<h2>Cours inclus</h2><ul class="liste-num">' + numListe(f.cours) + '</ul>' +
-        '<h2 style="margin-top:28px">Étapes à compléter</h2><ul class="liste-num">' + numListe(f.etapes) + '</ul>' +
+        '<h2>Cours inclus</h2><ul class="liste-num">' + numListe(form.cours) + '</ul>' +
+        '<h2 style="margin-top:28px">Étapes à compléter</h2><ul class="liste-num">' + numListe(form.etapes) + '</ul>' +
       '</div>' +
       '<div>' +
         '<h2>Compétences</h2><div class="tags">' +
-          f.competences.map(function (x) { return '<span class="tag">' + x + '</span>'; }).join("") +
+          form.competences.map(function (x) { return '<span class="tag">' + x + '</span>'; }).join("") +
         '</div><p style="margin-top:24px"><a class="btn" href="contact.html">Nous contacter</a></p>' +
       '</div>' +
     '</div><p style="margin-top:24px"><a href="formations.html"> ← Toutes les formations</a></p></div>';
