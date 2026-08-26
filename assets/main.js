@@ -88,14 +88,10 @@ function initContact() {
 /* Charge le JSON puis affiche */
 function chargerFormations() {
   var cible = document.getElementById("liste") || document.getElementById("detail");
-  if (!cible) return;
+  if (!cible) return;                   // ← à GARDER (aiguillage)
   fetch("assets/formations.json")
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (d) { FORMATIONS = d; afficherListe(); afficherDetail(); })
-    .catch(function () {
-      cible.innerHTML = '<div class="conteneur section"><h2>Impossible de charger les formations</h2>' +
-        '<p>Ouvre le site via un serveur local (ex. <code>python -m http.server</code>), pas en double-clic.</p></div>';
-    });
+    .then(function (r) { return r.json(); })
+    .then(function (d) { FORMATIONS = d; afficherListe(); afficherDetail(); });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
