@@ -1,6 +1,4 @@
-/* ===== FormaPro — script unique ===== */
-
-var FORMATIONS = [];  // rempli depuis formations.json
+var FORMATIONS = [];
 
 /* Icône + couleur d'affichage par id de formation */
 var STYLES = {
@@ -20,14 +18,14 @@ function styleDe(id) { return STYLES[id] || { icone: "📘", couleur: "#1f3a5f" 
 /* Ouvre / ferme le menu mobile */
 function basculerMenu() { document.getElementById("nav").classList.toggle("ouvert"); }
 
-/* Petite fonction réutilisée pour les cours ET les étapes */
+/* Petite fonction réutilisée pour les cours et les étapes */
 function numListe(arr) {
   return arr.map(function (t, i) {
     return '<li><span class="n">' + (i + 1) + '</span><span>' + t + '</span></li>';
   }).join("");
 }
 
-/* Liste des formations (cartes) */
+/* Liste des formations */
 function afficherListe() {
   var c = document.getElementById("liste");
   if (!c) return;
@@ -40,7 +38,7 @@ function afficherListe() {
   }).join("");
 }
 
-/* Détails d'une formation (selon l'id dans l'URL) */
+/* Détails d'une formation */
 function afficherDetail() {
   var z = document.getElementById("detail");
   if (!z) return;
@@ -71,7 +69,7 @@ function afficherDetail() {
     '</div><p style="margin-top:24px"><a href="formations.html">← Toutes les formations</a></p></div>';
 }
 
-/* Formulaire de contact : bouton désactivé tant que les champs sont vides */
+/* Formulaire de contact */
 function initContact() {
   var form = document.getElementById("form");
   if (!form) return;
@@ -93,7 +91,7 @@ function initContact() {
   });
 }
 
-/* Charge le JSON puis affiche (uniquement si la page en a besoin) */
+/* Charge le JSON puis affiche */
 function chargerFormations() {
   var cible = document.getElementById("liste") || document.getElementById("detail");
   if (!cible) return;
