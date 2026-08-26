@@ -1,399 +1,423 @@
-/* Variables de couleurs et espacements */
+/* =========================================================
+   FormaPro — feuille de styles
+   Classes réutilisées au maximum, présentation aérée.
+   ========================================================= */
+
+/* Variables (couleurs, mesures) */
 :root {
-  --bleu: #1f3a5f;        /* couleur principale */
-  --bleu-clair: #2f5d8a;  /* accents */
-  --gris-fonce: #2b2f36;  /* texte principal */
-  --gris: #5c6470;        /* texte secondaire */
-  --gris-clair: #eef1f5;  /* fonds de sections */
-  --bordure: #dce1e8;     /* bordures fines */
-  --blanc: #ffffff;
+  --bleu: #1f3a5f;      /* couleur principale */
+  --bleu2: #2f5d8a;     /* accents et survols */
+  --texte: #2b2f36;     /* texte courant */
+  --gris: #5c6470;      /* texte secondaire */
+  --fond: #eef1f5;      /* fonds clairs */
+  --bord: #dce1e8;      /* bordures fines */
+  --rayon: 8px;         /* arrondi standard */
+  --large: 1120px;      /* largeur max du contenu */
   --ombre: 0 2px 10px rgba(31, 58, 95, .08);
-  --rayon: 8px;
-  --largeur: 1120px;
 }
 
 /* Réinitialisation de base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--gris-fonce);
-  line-height: 1.6;
-  background: var(--blanc);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Conteneur centré */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texte);
+  line-height: 1.6;
+
+  /* Colonne verticale : permet de pousser le footer tout en bas */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--bleu2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Structure : conteneur et sections */
 .conteneur {
   width: 100%;
-  max-width: var(--largeur);
+  max-width: var(--large);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-a { color: var(--bleu-clair); text-decoration: none; }
-a:hover { text-decoration: underline; }
+.section {
+  padding: 56px 0;
+}
 
-/* ===== En-tête et navigation ===== */
+.section.gris {
+  background: var(--fond);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--bleu);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--bleu);
+  margin-bottom: 16px;
+}
+
+/* Boutons (une base + une variante "clair") */
+.btn {
+  display: inline-block;
+  background: var(--bleu);
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: var(--rayon);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--bleu2);
+  text-decoration: none;
+}
+
+.btn.clair {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.btn:disabled {
+  background: #aeb6c2;
+  cursor: not-allowed;
+}
+
+/* Bandeau : accueil, en-têtes de page, détails */
+.bandeau {
+  padding: 60px 0;
+  color: #fff;
+  background: linear-gradient(135deg, var(--bleu), var(--bleu2));
+}
+
+.bandeau h1 {
+  color: #fff;
+}
+
+.bandeau p {
+  opacity: .95;
+  max-width: 640px;
+  margin-top: 10px;
+}
+
+.bandeau .btn {
+  margin-top: 22px;
+}
+
+.bandeau .btn + .btn {
+  margin-left: 10px;
+}
+
+.slogan {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .85rem;
+  opacity: .9;
+}
+
+/* En-tête et navigation */
 .entete {
-  background: var(--blanc);
-  border-bottom: 1px solid var(--bordure);
   position: sticky;
   top: 0;
   z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid var(--bord);
 }
+
 .entete .conteneur {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  min-height: 62px;
 }
+
 .logo {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--bleu);
 }
-.logo span { color: var(--bleu-clair); }
 
-/* Menu de navigation */
-.nav-liens {
+.nav {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   list-style: none;
-  align-items: center;
 }
-.nav-liens a {
-  color: var(--gris-fonce);
+
+.nav a {
+  color: var(--texte);
   padding: 8px 12px;
   border-radius: var(--rayon);
-  font-size: .95rem;
 }
-.nav-liens a:hover { background: var(--gris-clair); text-decoration: none; }
-.nav-liens a.actif { color: var(--bleu); font-weight: 600; }
 
-/* Bouton d'ouverture du menu (mobile) */
-.menu-burger {
+.nav a:hover {
+  background: var(--fond);
+  text-decoration: none;
+}
+
+/* Bouton du menu, visible seulement sur mobile */
+.burger {
   display: none;
   background: none;
-  border: 1px solid var(--bordure);
+  border: 1px solid var(--bord);
   border-radius: var(--rayon);
   padding: 6px 10px;
   font-size: 1.3rem;
-  cursor: pointer;
   color: var(--bleu);
-}
-
-/* ===== Boutons ===== */
-.btn {
-  display: inline-block;
-  background: var(--bleu);
-  color: var(--blanc);
-  padding: 12px 22px;
-  border-radius: var(--rayon);
-  font-weight: 600;
-  border: none;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background .2s;
 }
-.btn:hover { background: var(--bleu-clair); text-decoration: none; }
-/* Bouton désactivé (formulaire incomplet) */
-.btn:disabled { background: #aeb6c2; cursor: not-allowed; }
-.btn:disabled:hover { background: #aeb6c2; }
-.btn-secondaire {
-  background: transparent;
-  color: var(--bleu);
-  border: 1px solid var(--bleu);
-}
-.btn-secondaire:hover { background: var(--gris-clair); }
 
-/* ===== Section héro ===== */
-.hero {
-  background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
-  color: var(--blanc);
-  padding: 80px 0;
-}
-.hero h1 { font-size: 2.4rem; margin-bottom: 16px; line-height: 1.2; }
-.hero p { font-size: 1.15rem; max-width: 620px; margin-bottom: 28px; opacity: .95; }
-.hero .btn-secondaire { color: var(--blanc); border-color: var(--blanc); }
-.hero .btn-secondaire:hover { background: rgba(255,255,255,.12); }
-.hero-boutons { display: flex; gap: 14px; flex-wrap: wrap; }
-
-/* ===== Sections génériques ===== */
-.section { padding: 64px 0; }
-.section-gris { background: var(--gris-clair); }
-.section-titre { font-size: 1.8rem; color: var(--bleu); margin-bottom: 12px; }
-.section-intro { color: var(--gris); max-width: 680px; margin-bottom: 36px; }
-
-/* En-tête de page interne */
-.page-entete {
-  background: var(--gris-clair);
-  border-bottom: 1px solid var(--bordure);
-  padding: 48px 0;
-}
-.page-entete h1 { font-size: 2rem; color: var(--bleu); }
-.page-entete p { color: var(--gris); margin-top: 8px; }
-
-/* ===== Grilles de cartes ===== */
+/* Grille et cartes
+   La classe .carte est réutilisée partout :
+   atouts, mission/vision, chiffres, formations, coordonnées. */
 .grille {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-/* Carte de mise en avant (accueil) */
-.carte-atout {
-  background: var(--blanc);
-  border: 1px solid var(--bordure);
-  border-radius: var(--rayon);
-  padding: 28px;
-  box-shadow: var(--ombre);
-}
-.carte-atout .icone { font-size: 1.8rem; margin-bottom: 12px; }
-.carte-atout h3 { color: var(--bleu); margin-bottom: 8px; }
-.carte-atout p { color: var(--gris); font-size: .95rem; }
-
-/* Carte de formation */
-.carte-formation {
-  background: var(--blanc);
-  border: 1px solid var(--bordure);
-  border-radius: var(--rayon);
-  overflow: hidden;
-  box-shadow: var(--ombre);
+.carte {
   display: flex;
   flex-direction: column;
-  transition: transform .2s, box-shadow .2s;
+  background: #fff;
+  border: 1px solid var(--bord);
+  border-radius: var(--rayon);
+  padding: 24px;
+  box-shadow: var(--ombre);
 }
-.carte-formation:hover {
-  transform: translateY(-4px);
+
+.carte:hover {
   box-shadow: 0 8px 22px rgba(31, 58, 95, .14);
 }
-.carte-formation .banniere {
-  height: 90px;
+
+.carte h3 {
+  color: var(--bleu);
+  margin-bottom: 8px;
+}
+
+.carte p {
+  color: var(--gris);
+  font-size: .95rem;
+  margin-bottom: 14px;
+}
+
+.carte .btn {
+  margin-top: auto;   /* colle le bouton en bas de la carte */
+  text-align: center;
+}
+
+/* Pastille colorée qui contient l'icône (emoji) */
+.badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
-  color: var(--blanc);
+  font-size: 1.6rem;
+  color: #fff;
+  background: var(--bleu);
+  margin-bottom: 14px;
 }
-.carte-formation .corps { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-.carte-formation h3 { color: var(--bleu); margin-bottom: 8px; font-size: 1.15rem; }
-.carte-formation .categorie {
-  display: inline-block;
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  color: var(--bleu-clair);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.carte-formation p { color: var(--gris); font-size: .92rem; margin-bottom: 16px; }
-.carte-formation .meta {
-  display: flex;
-  gap: 16px;
-  font-size: .82rem;
-  color: var(--gris);
-  margin-bottom: 16px;
-}
-.carte-formation .btn { margin-top: auto; text-align: center; }
 
-/* ===== Page détails ===== */
-.detail-entete {
-  color: var(--blanc);
-  padding: 56px 0;
+/* Gros chiffre de la page "En chiffres" */
+.chiffre {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bleu);
 }
-.detail-entete .categorie {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: .8rem;
-  opacity: .9;
-}
-.detail-entete h1 { font-size: 2.1rem; margin: 8px 0 12px; }
-.detail-entete p { max-width: 680px; opacity: .95; }
-.detail-meta {
-  display: flex;
-  gap: 28px;
-  margin-top: 22px;
-  flex-wrap: wrap;
-  font-size: .95rem;
-}
-.detail-meta strong { display: block; font-size: 1.15rem; }
 
-/* Disposition détails en deux colonnes */
-.detail-grille {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 36px;
-  align-items: start;
+/* Listes numérotées (cours ET étapes) */
+.liste-num {
+  list-style: none;
 }
-.bloc {
-  background: var(--blanc);
-  border: 1px solid var(--bordure);
-  border-radius: var(--rayon);
-  padding: 28px;
-  margin-bottom: 24px;
-  box-shadow: var(--ombre);
-}
-.bloc h2 { color: var(--bleu); font-size: 1.35rem; margin-bottom: 18px; }
 
-/* Liste des cours */
-.liste-cours { list-style: none; }
-.liste-cours li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--bordure);
+.liste-num li {
   display: flex;
-  align-items: flex-start;
   gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--bord);
 }
-.liste-cours li:last-child { border-bottom: none; }
-.liste-cours .num {
-  background: var(--gris-clair);
+
+.liste-num li:last-child {
+  border: none;
+}
+
+/* Le petit rond numéroté à gauche */
+.liste-num .n {
+  flex: 0 0 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--fond);
   color: var(--bleu);
   font-weight: 700;
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
   font-size: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Étapes (timeline) */
-.etapes { list-style: none; position: relative; padding-left: 8px; }
-.etape {
-  position: relative;
-  padding: 0 0 26px 34px;
-  border-left: 2px solid var(--bordure);
+/* Étiquettes (compétences) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.etape:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
-.etape::before {
-  content: "";
-  position: absolute;
-  left: -8px; top: 2px;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--bleu);
-  border: 3px solid var(--blanc);
-  box-shadow: 0 0 0 1px var(--bleu);
-}
-.etape h4 { color: var(--bleu); margin-bottom: 4px; }
-.etape p { color: var(--gris); font-size: .92rem; }
 
-/* Compétences (étiquettes) */
-.competences { display: flex; flex-wrap: wrap; gap: 10px; }
-.competence {
-  background: var(--gris-clair);
+.tag {
+  background: var(--fond);
   color: var(--bleu);
   padding: 8px 14px;
   border-radius: 20px;
   font-size: .88rem;
-  font-weight: 500;
 }
 
-/* Mise en page À propos : texte + illustration */
-.apropos-grille {
+/* Mise en page à deux colonnes utilisée pour À propos, Détails et Contact. */
+.deux-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-.apropos-image svg { width: 100%; height: auto; border-radius: var(--rayon); box-shadow: var(--ombre); }
-@media (max-width: 760px) { .apropos-grille { grid-template-columns: 1fr; } }
-
-/* ===== Formulaire de contact ===== */
-.form-grille {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 36px;
+  gap: 32px;
   align-items: start;
 }
-.champ { margin-bottom: 18px; }
-.champ label { display: block; font-weight: 600; margin-bottom: 6px; font-size: .95rem; }
-.champ input, .champ textarea, .champ select {
+.deux-cols.large {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* Formulaire */
+.champ {
+  margin-bottom: 16px;
+}
+.champ label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.champ input,
+.champ textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--bordure);
+  border: 1px solid var(--bord);
   border-radius: var(--rayon);
-  font-size: 1rem;
-  font-family: inherit;
-  color: var(--gris-fonce);
+  font: inherit;
 }
-.champ input:focus, .champ textarea:focus, .champ select:focus {
+.champ textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.champ input:focus,
+.champ textarea:focus {
   outline: none;
-  border-color: var(--bleu-clair);
+  border-color: var(--bleu2);
   box-shadow: 0 0 0 3px rgba(47, 93, 138, .12);
 }
-.champ textarea { resize: vertical; min-height: 130px; }
-.erreur { color: #c0392b; font-size: .82rem; margin-top: 4px; display: none; }
-.champ.invalide input, .champ.invalide textarea { border-color: #c0392b; }
-.champ.invalide .erreur { display: block; }
 
-/* Message de succès */
-.message-succes {
+/* Message de succès affiché par le JS */
+.succes {
+  display: none;
   background: #e6f4ea;
   border: 1px solid #a9d5b8;
   color: #1e7a3d;
-  padding: 16px;
+  padding: 14px;
   border-radius: var(--rayon);
-  margin-bottom: 20px;
-  display: none;
+  margin-bottom: 18px;
 }
 
-/* Encart d'information contact */
-.info-contact { background: var(--gris-clair); border-radius: var(--rayon); padding: 28px; }
-.info-contact h3 { color: var(--bleu); margin-bottom: 16px; }
-.info-contact .ligne { display: flex; gap: 12px; margin-bottom: 14px; font-size: .95rem; }
-.info-contact .ligne .icone { font-size: 1.2rem; }
-
-/* ===== Pied de page ===== */
+/* Pied de page */
 .pied {
-  background: var(--gris-fonce);
+  margin-top: auto;   /* pousse le footer en bas quand la page est courte */
+  background: var(--texte);
   color: #c8cdd6;
-  padding: 40px 0 24px;
-  margin-top: 0;
+  padding: 34px 0;
 }
-.pied-grille {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 32px;
-  margin-bottom: 28px;
+
+.pied .conteneur {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
 }
-.pied h4 { color: var(--blanc); margin-bottom: 14px; font-size: 1rem; }
-.pied a { color: #c8cdd6; display: block; padding: 3px 0; font-size: .92rem; }
-.pied a:hover { color: var(--blanc); }
-.pied .marque { font-size: 1.2rem; font-weight: 700; color: var(--blanc); margin-bottom: 10px; }
-.pied p { font-size: .9rem; }
-.pied-bas {
-  border-top: 1px solid #444a53;
-  padding-top: 18px;
+
+.pied a {
+  display: block;
+  color: #c8cdd6;
+  font-size: .92rem;
+}
+
+.pied a:hover {
+  color: #fff;
+}
+
+.pied .marque {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.pied small {
+  display: block;
+  width: 100%;
   text-align: center;
-  font-size: .85rem;
+  margin-top: 20px;
   color: #9aa1ab;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 860px) {
-  .detail-grille { grid-template-columns: 1fr; }
-  .form-grille { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 2rem; }
+/* Tablette 760px et moins */
+@media (max-width: 760px) {
+  .deux-cols,
+  .deux-cols.large {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 680px) {
-  /* Menu mobile déroulant */
-  .menu-burger { display: block; }
-  .nav-liens {
+/* Mobile 640px et moins */
+@media (max-width: 640px) {
+
+  /* Bouton du menu burger */
+  .burger {
+    display: block;
+  }
+
+  .nav {
     display: none;
     position: absolute;
-    top: 64px; left: 0; right: 0;
-    background: var(--blanc);
+    top: 62px;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    border-bottom: 1px solid var(--bordure);
+    background: #fff;
+    border-bottom: 1px solid var(--bord);
     box-shadow: var(--ombre);
     padding: 8px 12px;
   }
-  .nav-liens.ouvert { display: flex; }
-  .nav-liens a { padding: 12px; border-radius: 0; }
-  .pied-grille { grid-template-columns: 1fr; gap: 20px; }
-  .hero { padding: 56px 0; }
-  .section { padding: 44px 0; }
+
+  /* Classe ajoutée par le JS au clic sur le bouton burger */
+  .nav.ouvert {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px;
+  }
 }

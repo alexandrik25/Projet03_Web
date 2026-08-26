@@ -3,50 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Détails de la formation — FormaPro</title>
+  <title>Détails — FormaPro</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-  <!-- En-tête / navigation -->
+  <!-- En-tête commun -->
   <header class="entete">
     <div class="conteneur">
-      <a href="index.html" class="logo">Forma<span>Pro</span></a>
-      <button class="menu-burger" onclick="basculerMenu()" aria-label="Menu">☰</button>
-      <ul class="nav-liens" id="nav-liens">
+      <a href="index.html" class="logo">FormaPro</a>
+      <button class="burger" onclick="basculerMenu()">☰</button>
+      <ul class="nav" id="nav">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
-        <li><a href="formations.html">Formations</a></li>
+        <li><a href="formations.html" style="font-weight:700">Formations</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- Contenu de la formation (généré par JavaScript selon l'id de l'URL) -->
-  <main id="detail-formation"></main>
+  <!-- Contenu généré par main.js selon l'id présent dans l'URL -->
+  <main id="detail"></main>
 
-  <!-- Pied de page -->
+  <!-- Pied de page commun -->
   <footer class="pied">
     <div class="conteneur">
-      <div class="pied-grille">
-        <div>
-          <div class="marque">FormaPro</div>
-          <p>La plateforme de formation en ligne dédiée aux métiers du numérique. Apprenez, pratiquez, évoluez.</p>
-        </div>
-        <div>
-          <h4>Navigation</h4>
-          <a href="index.html">Accueil</a>
-          <a href="apropos.html">À propos</a>
-          <a href="formations.html">Formations</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>contact@formapro.ca<br>+1 514 000 0000<br>Montréal, QC</p>
-        </div>
+      <div>
+        <div class="marque">FormaPro</div>
+        <p>Formation en ligne aux métiers du numérique.</p>
       </div>
-      <div class="pied-bas">© 2026 FormaPro. Tous droits réservés.</div>
+      <div>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="formations.html">Formations</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a>📧 contact@formapro.ca</a>
+        <a>📞 +1 514 000 0000</a>
+        <a>📍 Montréal, QC</a>
+      </div>
     </div>
+    <small>© 2026 FormaPro. Tous droits réservés.</small>
   </footer>
 
   <script src="assets/main.js"></script>
