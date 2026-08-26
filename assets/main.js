@@ -60,7 +60,7 @@ function afficherDetail() {
           f.competences.map(function (x) { return '<span class="tag">' + x + '</span>'; }).join("") +
         '</div><p style="margin-top:24px"><a class="btn" href="contact.html">Nous contacter</a></p>' +
       '</div>' +
-    '</div><p style="margin-top:24px"><a href="formations.html">← Toutes les formations</a></p></div>';
+    '</div><p style="margin-top:24px"><a href="formations.html"> ← Toutes les formations</a></p></div>';
 }
 
 /* Formulaire de contact */
