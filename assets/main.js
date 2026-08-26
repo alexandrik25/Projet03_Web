@@ -88,7 +88,7 @@ function initContact() {
 /* Charge le JSON puis affiche */
 function chargerFormations() {
   var cible = document.getElementById("liste") || document.getElementById("detail");
-  if (!cible) return;                   // ← à GARDER (aiguillage)
+  if (!cible) return;
   fetch("assets/formations.json")
     .then(function (r) { return r.json(); })
     .then(function (d) { FORMATIONS = d; afficherListe(); afficherDetail(); });
