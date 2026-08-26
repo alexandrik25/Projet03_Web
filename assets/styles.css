@@ -1,9 +1,4 @@
-/* =========================================================
-   FormaPro — feuille de styles
-   Classes réutilisées au maximum, présentation aérée.
-   ========================================================= */
-
-/* Variables (couleurs, mesures) */
+/* Couleurs, mesures */
 :root {
   --bleu: #1f3a5f;      /* couleur principale */
   --bleu2: #2f5d8a;     /* accents et survols */
@@ -28,7 +23,7 @@ body {
   color: var(--texte);
   line-height: 1.6;
 
-  /* Colonne verticale : permet de pousser le footer tout en bas */
+  /* Colonne verticale */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -48,7 +43,7 @@ svg {
   max-width: 100%;
 }
 
-/* Structure : conteneur et sections */
+/* Conteneur et sections */
 .conteneur {
   width: 100%;
   max-width: var(--large);
@@ -75,7 +70,7 @@ h2 {
   margin-bottom: 16px;
 }
 
-/* Boutons (une base + une variante "clair") */
+/* Boutons */
 .btn {
   display: inline-block;
   background: var(--bleu);
@@ -104,7 +99,7 @@ h2 {
   cursor: not-allowed;
 }
 
-/* Bandeau : accueil, en-têtes de page, détails */
+/* Accueil, en-têtes de page, détails */
 .bandeau {
   padding: 60px 0;
   color: #fff;
@@ -175,7 +170,7 @@ h2 {
   text-decoration: none;
 }
 
-/* Bouton du menu, visible seulement sur mobile */
+/* Bouton du menu mobile */
 .burger {
   display: none;
   background: none;
@@ -222,11 +217,11 @@ h2 {
 }
 
 .carte .btn {
-  margin-top: auto;   /* colle le bouton en bas de la carte */
+  margin-top: auto;
   text-align: center;
 }
 
-/* Pastille colorée qui contient l'icône (emoji) */
+/* Pastille colorée qui contient l'emoji */
 .badge {
   width: 52px;
   height: 52px;
@@ -240,14 +235,14 @@ h2 {
   margin-bottom: 14px;
 }
 
-/* Gros chiffre de la page "En chiffres" */
+/* Gros chiffre de la page */
 .chiffre {
   font-size: 2rem;
   font-weight: 700;
   color: var(--bleu);
 }
 
-/* Listes numérotées (cours ET étapes) */
+/* Listes numérotées cours et étapes */
 .liste-num {
   list-style: none;
 }
@@ -278,7 +273,7 @@ h2 {
   justify-content: center;
 }
 
-/* Étiquettes (compétences) */
+/* Étiquettes compétences */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -293,7 +288,7 @@ h2 {
   font-size: .88rem;
 }
 
-/* Mise en page à deux colonnes utilisée pour À propos, Détails et Contact. */
+/* Mise en page à deux colonnes pour À propos, Détails et Contact. */
 .deux-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -345,7 +340,7 @@ h2 {
 
 /* Pied de page */
 .pied {
-  margin-top: auto;   /* pousse le footer en bas quand la page est courte */
+  margin-top: auto;
   background: var(--texte);
   color: #c8cdd6;
   padding: 34px 0;
