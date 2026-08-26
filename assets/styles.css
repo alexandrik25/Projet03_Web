@@ -235,13 +235,6 @@ h2 {
   margin-bottom: 14px;
 }
 
-/* Gros chiffre de la page */
-.chiffre {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--bleu);
-}
-
 /* Listes numérotées cours et étapes */
 .liste-num {
   list-style: none;
