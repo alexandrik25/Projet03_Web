@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — FormaPro</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- En-tête / navigation -->
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">Forma<span>Pro</span></a>
+      <button class="menu-burger" onclick="basculerMenu()" aria-label="Menu">☰</button>
+      <ul class="nav-liens" id="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- En-tête de page -->
+  <section class="page-entete">
+    <div class="conteneur">
+      <h1>Contactez-nous</h1>
+      <p>Une question sur nos formations ? Écrivez-nous, nous vous répondrons rapidement.</p>
+    </div>
+  </section>
+
+  <!-- Formulaire + informations -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="form-grille">
+
+        <!-- Colonne formulaire -->
+        <div>
+          <div class="message-succes" id="message-succes">
+            ✅ Merci ! Votre message a bien été envoyé. Notre équipe vous répondra sous peu.
+          </div>
+
+          <form id="form-contact" novalidate>
+            <div class="champ">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom">
+            </div>
+
+            <div class="champ">
+              <label for="email">Courriel *</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.com">
+            </div>
+
+            <div class="champ">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Écrivez votre message ici…"></textarea>
+            </div>
+
+            <!-- Bouton désactivé tant que les champs ne sont pas remplis -->
+            <button type="submit" class="btn" id="btn-envoyer" disabled>Envoyer le message</button>
+            <p style="font-size:.85rem;color:var(--gris);margin-top:10px">* Tous les champs sont requis. (Envoi simulé, aucune donnée transmise.)</p>
+          </form>
+        </div>
+
+        <!-- Colonne informations -->
+        <aside class="info-contact">
+          <h3>Nos coordonnées</h3>
+          <div class="ligne"><span class="icone">📧</span><span>contact@formapro.ca</span></div>
+          <div class="ligne"><span class="icone">📞</span><span>+1 514 000 0000</span></div>
+          <div class="ligne"><span class="icone">📍</span><span>Montréal, Québec, Canada</span></div>
+          <div class="ligne"><span class="icone">🕐</span><span>Lun. – Ven. : 9h à 17h</span></div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="marque">FormaPro</div>
+          <p>La plateforme de formation en ligne dédiée aux métiers du numérique. Apprenez, pratiquez, évoluez.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="apropos.html">À propos</a>
+          <a href="formations.html">Formations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>contact@formapro.ca<br>+1 514 000 0000<br>Montréal, QC</p>
+        </div>
+      </div>
+      <div class="pied-bas">© 2026 FormaPro. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

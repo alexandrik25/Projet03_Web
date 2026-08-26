@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — FormaPro</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- En-tête / navigation -->
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">Forma<span>Pro</span></a>
+      <button class="menu-burger" onclick="basculerMenu()" aria-label="Menu">☰</button>
+      <ul class="nav-liens" id="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- En-tête de page -->
+  <section class="page-entete">
+    <div class="conteneur">
+      <h1>À propos de FormaPro</h1>
+      <p>Un organisme de formation engagé pour l'accès aux compétences numériques.</p>
+    </div>
+  </section>
+
+  <!-- Présentation de l'organisme + illustration -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="apropos-grille">
+        <div>
+          <h2 class="section-titre">Notre organisme</h2>
+          <p style="color:var(--gris);margin-bottom:16px">FormaPro est un organisme de formation en ligne fondé en 2020. Nous accompagnons les apprenants, débutants comme professionnels, dans leur montée en compétences sur les métiers du numérique.</p>
+          <p style="color:var(--gris)">Nos parcours combinent théorie, pratique et projets concrets pour préparer efficacement à l'emploi. Chaque formation est conçue avec des professionnels du secteur.</p>
+        </div>
+        <!-- Illustration (SVG intégré, aucune dépendance externe) -->
+        <div class="apropos-image">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : apprentissage en ligne">
+            <rect width="400" height="300" rx="12" fill="#eef1f5"/>
+            <rect x="70" y="60" width="260" height="150" rx="10" fill="#1f3a5f"/>
+            <rect x="82" y="72" width="236" height="112" rx="4" fill="#ffffff"/>
+            <rect x="96" y="88" width="120" height="12" rx="6" fill="#2f5d8a"/>
+            <rect x="96" y="110" width="180" height="8" rx="4" fill="#dce1e8"/>
+            <rect x="96" y="126" width="160" height="8" rx="4" fill="#dce1e8"/>
+            <rect x="96" y="142" width="90" height="8" rx="4" fill="#dce1e8"/>
+            <circle cx="270" cy="150" r="22" fill="#2f5d8a"/>
+            <path d="M263 140 l16 10 l-16 10 z" fill="#ffffff"/>
+            <rect x="150" y="210" width="100" height="10" rx="5" fill="#1f3a5f"/>
+            <rect x="120" y="228" width="160" height="14" rx="7" fill="#c7cfda"/>
+            <circle cx="330" cy="80" r="18" fill="#b02a37" opacity="0.85"/>
+            <circle cx="60" cy="120" r="12" fill="#0f766e" opacity="0.85"/>
+            <circle cx="70" cy="230" r="10" fill="#9333ea" opacity="0.85"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission et vision -->
+  <section class="section section-gris">
+    <div class="conteneur">
+      <div class="grille">
+        <div class="carte-atout">
+          <div class="icone">🚀</div>
+          <h3>Notre mission</h3>
+          <p>Rendre la formation professionnelle numérique accessible, concrète et de qualité, afin de permettre à chacun d'acquérir des compétences recherchées et d'évoluer dans sa carrière.</p>
+        </div>
+        <div class="carte-atout">
+          <div class="icone">🔭</div>
+          <h3>Notre vision</h3>
+          <p>Devenir une référence francophone de la formation en ligne, où l'apprentissage s'adapte à chaque personne et où les compétences ouvrent de réelles opportunités professionnelles.</p>
+        </div>
+        <div class="carte-atout">
+          <div class="icone">🤝</div>
+          <h3>Nos valeurs</h3>
+          <p>Accessibilité, exigence pédagogique, bienveillance et proximité avec les besoins réels des entreprises et des apprenants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chiffres clés -->
+  <section class="section">
+    <div class="conteneur">
+      <h2 class="section-titre">FormaPro en quelques chiffres</h2>
+      <div class="grille">
+        <div class="carte-atout"><h3 style="font-size:2rem">5 000+</h3><p>Apprenants formés</p></div>
+        <div class="carte-atout"><h3 style="font-size:2rem">5</h3><p>Parcours de formation</p></div>
+        <div class="carte-atout"><h3 style="font-size:2rem">92 %</h3><p>Taux de satisfaction</p></div>
+        <div class="carte-atout"><h3 style="font-size:2rem">100 %</h3><p>En ligne et flexible</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="marque">FormaPro</div>
+          <p>La plateforme de formation en ligne dédiée aux métiers du numérique. Apprenez, pratiquez, évoluez.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="apropos.html">À propos</a>
+          <a href="formations.html">Formations</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>contact@formapro.ca<br>+1 514 000 0000<br>Montréal, QC</p>
+        </div>
+      </div>
+      <div class="pied-bas">© 2026 FormaPro. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
