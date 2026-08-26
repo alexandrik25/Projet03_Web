@@ -13,7 +13,7 @@ var STYLES = {
   9: { icone: "🐍", couleur: "#116149" },
   10: { icone: "🎨", couleur: "#9333ea" }
 };
-function styleDe(id) { return STYLES[id] || { icone: "📘", couleur: "#1f3a5f" }; }
+function styleDe(id) { return STYLES[id] }
 
 /* Ouvre / ferme le menu mobile */
 function basculerMenu() { document.getElementById("nav").classList.toggle("ouvert"); }
