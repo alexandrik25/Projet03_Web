@@ -45,12 +45,6 @@ function afficherDetail() {
   var id = parseInt(new URLSearchParams(location.search).get("id"), 10);
   var f = FORMATIONS.find(function (x) { return x.id === id; });
 
-  if (!f) {
-    z.innerHTML = '<div class="conteneur section"><h1>Formation introuvable</h1>' +
-      '<p><a class="btn" href="formations.html">Retour aux formations</a></p></div>';
-    return;
-  }
-
   var s = styleDe(f.id);
   document.title = f.nom + " — FormaPro";
   z.innerHTML =
